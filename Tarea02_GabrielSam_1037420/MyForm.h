@@ -288,7 +288,7 @@ namespace Tarea02GabrielSam1037420 {
 			if (0 == A[i])
 				txtimprimir->Text = " ";
 			else
-				txtimprimir->Text =	Convert::ToString(A[i]);
+				txtimprimir->Text = txtimprimir->Text + A[i];
 		} // Cierra for
 
 		txtimprimir->Text = "****";
