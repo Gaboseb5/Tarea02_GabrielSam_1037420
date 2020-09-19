@@ -149,7 +149,7 @@ namespace Tarea02GabrielSam1037420 {
 
 
 		while (0 == centinela)
-		{ // Abre while
+		{ 
 
 			txtimprimir->Text= txtimprimir->Text +numero;
 
@@ -167,26 +167,26 @@ namespace Tarea02GabrielSam1037420 {
 			liebre = Posicion_Liebre;
 			txtimprimir->Text = txtimprimir->Text + Posicion_Liebre;
 			txtimprimir->Text = txtimprimir->Text + Posicion_Tortuga ;
-			// Descomentar
+			
 
 
 			if ((1 <= Posicion_Liebre) && (Tamano_Arreglo > Posicion_Liebre))
-			{ // Abre if
+			{ 
 				Pista[Posicion_Liebre] = 'H';
-			} // Cierra if
+			} 
 
 			if (1 > Posicion_Liebre)
 			{
-				txtimprimir->Text = "Menor ";
-				// Descomentar
+				//txtimprimir->Text = "Menor ";
+				
 
 				Posicion_Liebre = 1;
 				Pista[Posicion_Liebre] = 'H';
 			}
 			if ((Posicion_Tortuga >= 1) && (Tamano_Arreglo > Posicion_Liebre))
-			{ // Abre if
-				txtimprimir->Text = "entro a if ";
-				// Descomentar
+			{ 
+				//txtimprimir->Text = "entro a if ";
+				
 
 				if (Posicion_Tortuga == Posicion_Liebre)
 				{
@@ -196,7 +196,7 @@ namespace Tarea02GabrielSam1037420 {
 				{
 					Pista[Posicion_Tortuga] = 'T';
 				}
-			} // Cierra if
+			}
 
 			if (Posicion_Tortuga < 1)
 			{
@@ -208,7 +208,7 @@ namespace Tarea02GabrielSam1037420 {
 			}
 
 			if (Posicion_Liebre >= Tamano_Arreglo)
-			{ // Abre if
+			{ 
 				centinela = -1;
 				if (Posicion_Tortuga > Tamano_Arreglo)
 					txtimprimir->Text = "\nQUE CIERRE! LA LIEBRE Y LA TORTUGA EMPATARON! ";
@@ -216,11 +216,11 @@ namespace Tarea02GabrielSam1037420 {
 					txtimprimir->Text = "\nNI HABLAR, GANO LA LIEBRE! ";
 
 				Pista[Tamano_Arreglo] = 'L';
-			} // Cierra if
+			} 
 
 
 			if (Posicion_Tortuga >= Tamano_Arreglo)
-			{ // Abre if
+			{ 
 				centinela = -1;
 				if (Posicion_Liebre < Tamano_Arreglo)
 				{
@@ -234,17 +234,16 @@ namespace Tarea02GabrielSam1037420 {
 					Pista[Tamano_Arreglo] = 'E';
 					txtimprimir->Text = "\nEN UN DRAMATICO CIERRE LA TORTUGA Y LA LIEBRE EMPATAN! " ;
 				}
-			} // Cierra if
-
+			} 
 
 			Imprime_Pista(Pista, Tamano_Arreglo);
 
 			if ('E' == Pista[Posicion_Tortuga])
-			{ // Abre if
+			{ 
 
 				switch (contador)
 
-				{ // Abrre switch
+				{ 
 				case 1:
 				{
 					txtimprimir->Text = "\aOUCH! LA TORTUGA TRAMPOSA HA MORDIDO A LA LIEBRE! ";
@@ -268,11 +267,11 @@ namespace Tarea02GabrielSam1037420 {
 					txtimprimir->Text = "\aOUCH! PERO DE QUE SE TRATA?!!";
 					break;
 				}
-				} // cierra switch
+				} 
 
-			} // Cierra if
+			} 
 
-		} // Cierra centinela
+		} 
 
 
 
@@ -280,38 +279,36 @@ namespace Tarea02GabrielSam1037420 {
 
 	void Imprime_Pista(char A[], int n)
 
-	{ // Abre Imprime pista
+	{ 
 
 		txtimprimir->Text="***";
 		for (int i = 1; i <= n; i++)
-		{ // Abre for
+		{ 
 			if (0 == A[i])
 				txtimprimir->Text = " ";
 			else
 				txtimprimir->Text = txtimprimir->Text + A[i];
-		} // Cierra for
+		}
 
 		txtimprimir->Text = "****";
 		txtimprimir->Text;
 
 
 
-	} // Cierra Imprime pista
+	} 
 
 
-	/////////////////////////////////////////////////////////////////////
-	// INICIA AVANZA LIEBRE
-	////////////////////////////////////////////////////////////////////
+	
 
 	int Avanza_Liebre(int l)
 
-	{ // Abre Avanza Liebre
+	{ 
 		srand(time(0));
 		int ruleta;
 		ruleta = 1 + rand() % 10;
 
-		txtimprimir->Text = "ruleta = " + ruleta;
-		//quitar este comentario para ver como se mueve esta variable
+		//txtimprimir->Text = "ruleta = " + ruleta;
+		
 
 		if (2 >= ruleta)
 			return l;
@@ -328,21 +325,19 @@ namespace Tarea02GabrielSam1037420 {
 		if (10 >= ruleta)
 			return l - 2;
 
-	} // Cierra Avanza Liebre
+	} 
 
 
 
-	///////////////////////////////////////////////////////////////////
-	// INICIA AVANZA TORTUGA
-	////////////////////////////////////////////////////////////////////
+
 
 	int Avanza_Tortuga(int t)
-	{ // Abre Avanza tortuga
+	{ 
 		srand(time(0));
 		int dados = 1 + rand() % 10;
 
-		txtimprimir->Text = "dados = " + dados;
-		// Descomentar para ver la variable dados
+		//txtimprimir->Text = "dados = " + dados;
+		
 
 		if (5 >= dados)
 			return (t + 3);
@@ -353,7 +348,7 @@ namespace Tarea02GabrielSam1037420 {
 		if (10 >= dados)
 			return (t + 1);
 
-	} // Cierra Avanza tortuga
+	} 
 	
 	};
 }
